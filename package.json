@@ -48,6 +48,7 @@
     "eslint": "^9.25.0",
     "eslint-config-expo": "~56.0.4",
     "postcss": "^8.5.15",
+    "pre-commit": "^2.0.0",
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3"
   },
