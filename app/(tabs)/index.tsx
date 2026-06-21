@@ -4,16 +4,20 @@ import { Link } from "expo-router";
 import { SafeAreaView as RNSafereView } from "react-native-safe-area-context";
 import {styled} from 'nativewind'
 import images from "@/constans/images"
-import { HOME_BALANCE, HOME_USER, UPCOMING_SUBSCRIPTIONS } from "@/constans/data";
+import { HOME_BALANCE, HOME_SUBSCRIPTIONS, HOME_USER, UPCOMING_SUBSCRIPTIONS } from "@/constans/data";
 import { icons } from "@/constans/icons";
 import { formatCurrency } from "@/lib/utils";
 import dayjs from "dayjs";
 import ListHeading from "@/components/ListHeading";
 import UpcomingSubscriptionsCard from "@/components/UpcomingSubscriptionsCard";
+import SubcriptionCard from "@/components/SubcriptionCard";
+import { useState } from "react";
 
 const SafeAreaView = styled(RNSafereView);
  
 export default function App() {
+  const [expandedSubscriptionId, setExpandedSubscriptionId] = useState<string | null>(null);
+
   return (
     <SafeAreaView className="flex-1 bg-background p-5">
       <View className="home-header">
@@ -47,6 +51,11 @@ export default function App() {
       </View>
       <View>
         <ListHeading title="All Subscriptions"/>
+        <SubcriptionCard 
+        {... HOME_SUBSCRIPTIONS[0]}
+        expanded={expandedSubscriptionId === HOME_SUBSCRIPTIONS[0].id}
+        onPress={()=> setExpandedSubscriptionId((currentId) => (currentId === HOME_SUBSCRIPTIONS[0].id ? null : HOME_SUBSCRIPTIONS[0].id))}
+        />
       </View>
     </SafeAreaView>
   );

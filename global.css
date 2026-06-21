@@ -159,7 +159,7 @@
     }
 
     .sub-icon {
-        @apply size-16 rounded-lg;
+        @apply size-16 rounded-lg bg-[#F6ECC9]/70 p-2.5;
     }
 
     .sub-copy {
