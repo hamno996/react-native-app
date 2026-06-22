@@ -40,6 +40,8 @@
           }
         }
       ],
+      "@clerk/expo",
+      "expo-secure-store",
       [
         "expo-font",
         {
@@ -55,7 +57,9 @@
       ],
       "expo-image",
       "expo-status-bar",
-      "expo-web-browser"
+      "expo-web-browser",
+      "@clerk/expo",
+      "expo-secure-store"
     ],
     "experiments": {
       "typedRoutes": true,
