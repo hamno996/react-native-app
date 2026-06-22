@@ -14,7 +14,7 @@ const TabLayout = () => {
         return (
             <View className="tabs-icon">
                 <View className={clsx('tabs-pill', focused && 'tabs-active')}>
-                    <Image source={icon} resizeMode="contain" className="tabs-glyph"/>
+                    <Image source={icon} resizeMode="stretch" className="tabs-glyph"/>
                 </View>
             </View>
         );
